@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
+
+.FromAdPo{
+      width: 100%;
+      height: 100%;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0;
+}
+
+body {
+    background: #0066ffad !important;
+    min-height: 100vh;
+    display: flex;
+    font-weight: 400;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,label,span {
+  font-weight: 500;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.button:hover {
+    opacity: .85;
+    transition: 0.3s; 
+    align-content:space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-button {
+    background-color: #1272f0;
+    border-radius: 10px;
+    
+}
+  
+.cancel-button {
+    background-color: rgb(228, 60, 31);
+    border-radius: 10px;
+}

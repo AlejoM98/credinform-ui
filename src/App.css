@@ -1,0 +1,128 @@
+.App {
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.form input{
+  margin: 20px auto;
+  width: 343px; 
+  height: 464px; 
+  -webkit-border-radius: 8px/7px; 
+  -moz-border-radius: 8px/7px; 
+  border-radius: 8px/7px; 
+  background-color: #f7f3f3; 
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  border: solid 1px #cbc9c9;width: 300px;
+  height: 30px;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.grid{
+  width: 250px;
+  height: 250px;
+  border: 2px solid gray;
+  background-color: #d2dff0;
+  border-radius: 15px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.card{
+  width: 250px;
+  height: 250px;
+  border: 2px solid gray;
+  background-color: #d2e1f3;
+  border-radius: 15px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#updateInput{
+  width: 225px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.button {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 6px 25px 0px 20px;
+  margin: 10px 8px 20px 0px;
+  display: inline-block;
+  text-decoration: none;
+  width: 150px; 
+  height: 30px; 
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  background-color: #3a63dd; 
+  -webkit-box-shadow: 0 3px rgb(255, 255, 255); 
+  -moz-box-shadow: 0 3px rgba(255, 255, 255); 
+  box-shadow: 0 3px rgba(255,255,255);
+  transition: all 0.1s linear 0s; 
+  top: 0px;
+  position: relative;
+}
+
+.buttonD {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 6px 25px 0px 20px;
+  margin: 10px 8px 20px 0px;
+  display: inline-block;
+  text-decoration: none;
+  width: 150px; 
+  height: 30px; 
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  background-color: #c92b2b; 
+  -webkit-box-shadow: 0 3px rgba(246, 246, 248, 0.75); 
+  -moz-box-shadow: 0 3px rgba(255, 255, 255, 0.75); 
+  box-shadow: 0 3px  rgba(255, 255, 255, 0.75);
+  transition: all 0.1s linear 0s; 
+  top: 0px;
+  position: relative;
+  
+}
+
+.buttonU {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 6px 25px 0px 20px;
+  margin: 10px 8px 20px 0px;
+  display: inline-block;
+  text-decoration: none;
+  width: 150px; 
+  height: 30px; 
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  background-color: #d8e246; 
+  -webkit-box-shadow: 0 3px rgba(255, 255, 255, 0.75); 
+  -moz-box-shadow: 0 3px rgba(255, 255, 255, 0.75); 
+  box-shadow: 0 3px  rgba(255, 255, 255, 0.75);
+  transition: all 0.1s linear 0s; 
+  top: 0px;
+  position: relative;
+}
+
+

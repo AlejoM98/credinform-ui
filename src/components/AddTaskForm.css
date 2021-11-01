@@ -1,0 +1,57 @@
+.task-input {
+    background: #cfcdcd;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    border: 10px;
+    font-size: 16px;
+    justify-content: center;
+  }
+  
+  .button {
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    justify-content: center;
+  }
+  
+  .button:hover {
+    opacity: .85;
+    transition: 0.3s; 
+    align-content: center;
+  }
+  
+  .add-button {
+    background-color: rgb(100,149,237);
+    justify-content: center;
+    border-radius: 10px;
+    
+  }
+  
+  .cancel-button {
+    background-color: rgb(255,99,71);
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+  }
+  
+  .open-add-button {
+    padding: 8px;
+    border-radius: 2px;
+  }
+  
+  .open-add-button a {
+    text-decoration: none;
+  }
+  
+  .list .open-add-button:hover {
+    background: #8a8787;
+  }
+  
+  .list .open-add-button a {
+    color: black;
+  }
