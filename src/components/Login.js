@@ -24,7 +24,7 @@ export default class Login extends Component {
         //Email si esta datos.
         if (!campo["email"]) {
             loginValido = false;
-            error["email"]= "Imtroduca un E-mail valido.";
+            error["email"]= "Introduca un E-mail valido.";
         }
         //Si el campo password esta con datos.
         if (!campo["password"]) {
@@ -95,13 +95,13 @@ export default class Login extends Component {
 
                 <div className="form-group">
                     <label>Correo</label>
-                    <input type="email" className="form-control" placeholder="Correo" onChange = {this.detectarCambio.bind(this, "email")} value={this.state.campo["email"] || ''}/>
+                    <input id="email" type="email" className="form-control" placeholder="Correo" onChange = {this.detectarCambio.bind(this, "email")} value={this.state.campo["email"] || ''}/>
                     <span style={{color:"red"}}>{this.state.error["email"]}</span>
                 </div>
 
                 <div className="form-group">
                     <label>Contraseña</label>
-                    <input type="password" className="form-control" placeholder="Contraseña" onChange = {this.detectarCambio.bind(this, "password")} value={this.state.campo["password"] || ''}/>
+                    <input id="password" type="password" className="form-control" placeholder="Contraseña" onChange = {this.detectarCambio.bind(this, "password")} value={this.state.campo["password"] || ''}/>
                     <span style={{color: "red"}}>{this.state.error["password"]}</span>
                 </div>
 
