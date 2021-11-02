@@ -28,7 +28,7 @@ export default class Kanban extends Component {
             }]
           },
           {
-            title: 'Haciendo',
+            title: 'Comite',
             id: 1,
             cards: [{
               taskText: 'Poliza 3',

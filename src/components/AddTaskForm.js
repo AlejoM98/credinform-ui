@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './AddTaskForm.css';
+import FormAdPo from '../pages/FormAdPo';
+import {Link} from "react-router-dom";
 
 export default class AddTaskForm extends React.Component {
   constructor(props) {
@@ -31,7 +33,9 @@ export default class AddTaskForm extends React.Component {
     if(!this.state.editing) {
       return (
         <div className="open-add-button" onClick={() => this.setEditing(true)}>
-          <a href="#">Adicionar tarea!</a>
+          <Link to = {`/formAdPo/${FormAdPo}`}>
+            <a href="#">Adicionar tarea!</a>
+          </Link>
         </div>  
         ); 
     }

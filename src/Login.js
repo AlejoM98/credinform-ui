@@ -4,13 +4,16 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+ 
 import Login from "./components/Login.js";
 import SignUp from "./components/SignUp.js";
 import Kanban from './components/Kanban.js';
 import FormAdPo from './pages/FormAdPo';
 import DashBoard from './pages/DashBoard';
 
+
 function Login1() {
+
   return (
   <Router>
     <div className="Login">
@@ -25,9 +28,7 @@ function Login1() {
               <li className="nav-item">
                 <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
               </li>
-              <li className = "nav-item">
-                <Link className = "nav-link" to={"/kanban"}>Kanban</Link>
-              </li>
+              
               <li className = "nav-item">
                 <Link className = "nav-link" to={"/fromadpo"}>Adicionar Poliza</Link>
               </li>
@@ -42,12 +43,12 @@ function Login1() {
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
-            <Route exact path='/' component={Login} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path= "/kanban" component={Kanban}/>
             <Route path="/fromadpo" component = {FormAdPo}/>
             <Route path="/dashboard" pages = {DashBoard}/>
+            <Route exact path='/' component={Login} />
           </Switch>
         </div>
       </div>
@@ -57,3 +58,7 @@ function Login1() {
 }
 
 export default Login1;
+/*<li className = "nav-item">
+                <Link className = "nav-link" to={"/kanban"}>Kanban</Link>
+              </li>
+              */
