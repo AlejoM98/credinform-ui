@@ -10,6 +10,7 @@ import SignUp from "./components/SignUp.js";
 import Kanban from './components/Kanban.js';
 import FormAdPo from './pages/FormAdPo';
 import DashBoard from './pages/DashBoard';
+/*import Kanban2 from './components/Kanban2';*/
 
 
 function Login1() {
@@ -28,7 +29,6 @@ function Login1() {
               <li className="nav-item">
                 <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
               </li>
-              
               <li className = "nav-item">
                 <Link className = "nav-link" to={"/fromadpo"}>Adicionar Poliza</Link>
               </li>

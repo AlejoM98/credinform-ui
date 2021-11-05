@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component  } from "react";
+import { BrowserRouter as Link } from "react-router-dom";
+import Login from "./Login";
 /*import Axios from 'axios';  ,useEffect, useState*/
 
 export default class SignUp extends Component {
@@ -11,6 +13,7 @@ export default class SignUp extends Component {
             error : {},
             enviado: false
         }
+        //this.handleChangeInput = this.handleChangeInput.bind(this);
     }
 
     validadarSingUp (){
@@ -36,7 +39,7 @@ export default class SignUp extends Component {
         //si el Campo esta completado
         if (!campo["email"]) {
             SingValidado = false;
-            error["email"]= "Imtroduca un E-mail valido.";
+            error["email"]= "Introduca un E-mail valido.";
         } 
         //si el Campo esta completado
         if (!campo["Cargo"]) {
@@ -62,6 +65,15 @@ export default class SignUp extends Component {
                 error["email"]= "Imtroduca un E-mail valido.";
             }
         }
+        // validacion no correcta de formulario 
+        if (typeof campo["Nombre"] !== "undefined"){
+            let sololetra = campo["Nombre"].lastIndexOf('[a-zA-Z ]+$');
+            let numero = campo["Nombre"].lastIndexOf('0123456789')
+            if (sololetra === numero && campo["Nombre"].indexOf('0123456789')===true) {
+                SingValidado = false;
+                error["Nombre"] = "Introduzca un nombre valido";
+            }
+        }
         // seteo el mensaje de error
         this.setState({
             error: error
@@ -73,14 +85,14 @@ export default class SignUp extends Component {
     enviarSing(e) {
         e.preventDefault();
         //Si la validacion de los campos es del formulario ha sido realizada 
-        if(this.validarLogin()){
+        if(this.validadarSingUp()){
             //Cambio el estado de 'enviado' a 'True'
             this.setState({
                 enviado: true
             });
 
             //Muestro el mensaje que se encuentra en la funcion mensajEnviado
-            return this.mensajEnviado();
+            return this.mensajeEnviado();
         }
     }
 
@@ -94,7 +106,7 @@ export default class SignUp extends Component {
         //si el valor de la variable enviado es 'true' pues mostrmos el mensaje
         if (enviado === true) {
             return {
-                __html: '<div class="alert-succes mt-3" role="alert">Inicio de sesion Exitoso</div>'
+            __html: '<div class="alert-succes mt-3" role="alert">Registro Exitoso</div>'
             };
         }
     };
@@ -109,56 +121,74 @@ export default class SignUp extends Component {
         });
     }
 
+    /*handleChangeInput (evento){
+        // descontruye los valores enviados por el metodo onChange de cad input
+        const {name, value} = evento.target.value;
+        let regex = new RegExp("[a-zA-Z ]+$");
+
+        if (regex.test(value)){
+            console.log(name,value);
+            this.setState({
+                //al elemento dentro de [] es una key de cada parametro dentro del estado
+                [name]: value
+            });
+        } else {
+            console.log("invalido")
+        }
+    }*/
+
     render() { 
         return (
-            <form className="form-group my-2">
+            <form className="form-group my-2" onSubmit={this.enviarSing.bind(this)}>
                 <h3>Sign Up</h3>
 
                 <div className="form-group my-2">
                     <label>Nombre</label>
-                    <input name= "name" type="text" id="Nombre" className="form-control" placeholder="Nombre" onChange = {this.detectarCambio.bind(this, "Nombre")} value={this.state.campo["Nombre"] || ''}/>
+                    <input name= "Nombre" type="text" id="Nombre" className="form-control" placeholder="Nombre" 
+                        onChange = {this.detectarCambio.bind(this, "Nombre")} value={this.state.campo["Nombre"] || ''}  />
                     <span style={{color:"red"}}>{this.state.error["Nombre"]}</span>
                 </div>
 
                 <div className="form-group">
                     <label>Apellido Paterno</label>
-                    <input id = "ApellidoPa" type="text" className="form-control" placeholder="Apellido Paterno" onChange={this.detectarCambio.bind(this,"ApellidoPa")} value={this.state.campo["ApellidoPa"] || ''}/>
+                    <input id = "ApellidoPa" type="text" className="form-control" placeholder="Apellido Paterno" 
+                        onChange={this.detectarCambio.bind(this,"ApellidoPa")} value={this.state.campo["ApellidoPa"] || ''}/>
                     <span style={{color:"red"}}>{this.state.error["ApellidoPa"]}</span>
                 </div>
 
                 <div className="form-group">
                     <label>Apellido Materno</label>
-                    <input id="ApellidoMa" type="text" className="form-control" placeholder="Apellido Materno" onChange={this.detectarCambio.bind(this, "ApellidoMa")} value={this.state.campo["ApellidoMa"] || ''}/>
+                    <input id="ApellidoMa" type="text" className="form-control" placeholder="Apellido Materno" 
+                        onChange={this.detectarCambio.bind(this, "ApellidoMa")} value={this.state.campo["ApellidoMa"] || ''}/>
                     <span style={{color:"red"}}>{this.state.error["ApellidoMa"]}</span>
                 </div>
 
                 <div className="form-group">
                     <label>Correo</label>
-                    <input id= "email" type="email" className="form-control" placeholder="Correo" onchange={this.detectarCambio.bind(this, "email")} value={this.state.campo["email"] || ''}/>
+                    <input id= "email" type="text" className="form-control" placeholder="Correo" 
+                        onChange={this.detectarCambio.bind(this, "email")} value={this.state.campo["email"] || ''}/>
                     <span style={{color:"red"}}>{this.state.error["email"]}</span>
                 </div>
 
                 <div className="form-group">
                     <label>Cargo</label>
-                    <input id="Cargo" type="text" name="workposition" className="form-control" placeholder="Cargo" onchange={this.detectarCambio.bind(this, "Cargo")} value={this.state.campo["Cargo"] || ''}/>
+                    <input id="Cargo" type="text" name="workposition" className="form-control" placeholder="Cargo" 
+                        onChange={this.detectarCambio.bind(this, "Cargo")} value={this.state.campo["Cargo"] || ''}/>
                     <span style={{color:"red"}}>{this.state.error["Cargo"]}</span>
                 </div>
 
                 <div className="form-group">
                     <label>Contraseña</label>
-                    <input id="password" type="password" className="form-control" placeholder="Ingrese Contraseña" onchange={this.detectarCambio.bind(this, "password")} value={this.state.campo["password"] || ''} />
+                    <input id="password" type="password" className="form-control" placeholder="Ingrese Contraseña" 
+                        onChange={this.detectarCambio.bind(this, "password")} value={this.state.campo["password"] || ''} />
                     <span style={{color:"red"}}>{this.state.error["password"]}</span>
                 </div>
 
-                <div className="form-group">
-                    <label>NickName</label>
-                    <input id="NickName" type="NickName" name="nickName" className="form-control" placeholder="Nickname" onchange={this.detectarCambio.bind(this, "NickName")} value={this.state.campo["NickNam"] || ''} />
-                    <span style={{color:"red"}}>{this.state.error["NickName"]}</span>
-                </div>
+                <div className="msgok" dangerouslySetInnerHTML={this.mensajeEnviado()} />
 
                 <button type="submit" className="btn btn-primary btn-block" >Registrar</button>
                 <p className="forgot-password text-right">
-                    Ya Registrado <a href="#">¿iniciar sesión?</a>
+                    Ya Registrado <Link to={`/login/${Login}`}><a href="#">¿iniciar sesión?</a></Link>
                 </p>
             </form>
         );

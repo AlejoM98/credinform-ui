@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import Kanban from "./Kanban";
+
 /*import {setToken, deleteToken, getToken, initAxiosInterceptors} from './Helpers/auth-helper'; initAxiosInterceptors();*/
 /*import Axios from 'axios';*/
 
@@ -59,7 +60,7 @@ export default class Login extends Component {
             });
 
             //Muestro el mensaje que se encuentra en la funcion mensajEnviado
-            return this.mensajEnviado();
+            return this.mensajeEnviado();
         }
     }
 
@@ -112,13 +113,12 @@ export default class Login extends Component {
                     </div>
                 </div>
                 <Link to={`/kanban/${Kanban}`}>
-                    <button type="submit" className="btn btn-primary btn-block" >Ingresa
-                    </button>
+                <div className="msgok" dangerouslySetInnerHTML={this.mensajeEnviado()} />
+                    <button type="submit" className="btn btn-primary btn-block" >Ingresa </button>
                 </Link>    
                 <p className="forgot-password text-right">
                     Olvidaste tu <a href="#">contreseña ?</a>
                 </p>
-                <div className="msgok" dangerouslySetInnerHTML={this.mensajeEnviado()} />
             </form>
         );
     }
