@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Kanban.css';
 import List from './List';
 
-export default class Kanban extends Component {
+export default class Kanban2 extends Component {
   constructor(props) {
     super(props);
     //if there's a localStorage to be had grab it otherwise set state
@@ -138,9 +138,9 @@ export default class Kanban extends Component {
   }
 
   handleSubmit = (e)=> {
-    //TODO conection DB
+    //TODO conection 
     e.preventDefault();
-    window.location.href = 'http://localhost:3000/formAdPo';
+    window.location.href = 'http://localhost:3000/routes/Routes';
   }
 
 
@@ -164,7 +164,7 @@ render() {
         <ul className="lists" >
           {lists}
           <button type="submit" className="btn btn-primary btn-block" > 
-            Adicionar
+            DashBoard
           </button>
         </ul>
       </div>

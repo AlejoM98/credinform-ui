@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Kanban.css';
 import List from './List';
 
-export default class Kanban extends Component {
+export default class Kanban1 extends Component {
   constructor(props) {
     super(props);
     //if there's a localStorage to be had grab it otherwise set state
@@ -163,9 +163,6 @@ render() {
       <div className="board" >
         <ul className="lists" >
           {lists}
-          <button type="submit" className="btn btn-primary btn-block" > 
-            Adicionar
-          </button>
         </ul>
       </div>
     </form>

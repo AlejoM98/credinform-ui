@@ -3,13 +3,13 @@
 .FromAdPo{
       width: 100%;
       height: 100%;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
       padding: 0;
 }
 
 body {
-    background: #0066ffad !important;
+    background: #1e83f7ad !important;
     min-height: 100vh;
     display: flex;
     font-weight: 400;
@@ -31,11 +31,9 @@ h1,h2,h3,h4,h5,h6,label,span {
 
 .add-button {
     background-color: #1272f0;
-    border-radius: 10px;
     
 }
   
 .cancel-button {
     background-color: rgb(228, 60, 31);
-    border-radius: 10px;
 }

@@ -66,14 +66,14 @@ export default class SignUp extends Component {
             }
         }
         // validacion no correcta de formulario 
-        if (typeof campo["Nombre"] !== "undefined"){
+        /*if (typeof campo["Nombre"] !== "undefined"){
             let sololetra = campo["Nombre"].lastIndexOf('[a-zA-Z ]+$');
             let numero = campo["Nombre"].lastIndexOf('0123456789')
             if (sololetra === numero && campo["Nombre"].indexOf('0123456789')===true) {
                 SingValidado = false;
                 error["Nombre"] = "Introduzca un nombre valido";
             }
-        }
+        }*/
         // seteo el mensaje de error
         this.setState({
             error: error

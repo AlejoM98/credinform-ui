@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
-import Kanban from "./Kanban";
+/*import {Link} from "react-router-dom";
+import Kanban from "./Kanban";*/
 
 /*import {setToken, deleteToken, getToken, initAxiosInterceptors} from './Helpers/auth-helper'; initAxiosInterceptors();*/
 /*import Axios from 'axios';*/
@@ -96,13 +96,15 @@ export default class Login extends Component {
 
                 <div className="form-group">
                     <label>Correo</label>
-                    <input id="email" type="email" className="form-control" placeholder="Correo" onChange = {this.detectarCambio.bind(this, "email")} value={this.state.campo["email"] || ''}/>
+                    <input id="email" type="email" className="form-control" placeholder="Correo" 
+                        onChange = {this.detectarCambio.bind(this, "email")} value={this.state.campo["email"] || ''} required/>
                     <span style={{color:"red"}}>{this.state.error["email"]}</span>
                 </div>
 
                 <div className="form-group">
                     <label>Contraseña</label>
-                    <input id="password" type="password" className="form-control" placeholder="Contraseña" onChange = {this.detectarCambio.bind(this, "password")} value={this.state.campo["password"] || ''}/>
+                    <input id="password" type="password" className="form-control" placeholder="Contraseña" 
+                        onChange = {this.detectarCambio.bind(this, "password")} value={this.state.campo["password"] || ''} required/>
                     <span style={{color: "red"}}>{this.state.error["password"]}</span>
                 </div>
 
@@ -112,10 +114,9 @@ export default class Login extends Component {
                         <label className="custom-control-label" htmlFor="customCheck1">Recuerdame</label>
                     </div>
                 </div>
-                <Link to={`/kanban/${Kanban}`}>
                 <div className="msgok" dangerouslySetInnerHTML={this.mensajeEnviado()} />
                     <button type="submit" className="btn btn-primary btn-block" >Ingresa </button>
-                </Link>    
+    
                 <p className="forgot-password text-right">
                     Olvidaste tu <a href="#">contreseña ?</a>
                 </p>

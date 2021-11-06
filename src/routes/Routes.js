@@ -7,7 +7,7 @@ function Routes() {
     return(
        <BrowserRouter>
        <Switch>
-           <Route path ="/" component={DashBoard} />
+           <Route path ="/dashboard" component={DashBoard} />
        </Switch>
        </BrowserRouter>
     );

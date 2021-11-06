@@ -24,12 +24,13 @@ export default class List extends React.Component {
         <h2 className={`name-header name-${this.props.id}`}>{this.props.title}</h2>
         <ul className="list" onDragOver={this.props.onDragOver} onDrop={this.props.onDrop}>
           {cards}
-          <li className="add-list-wrapper">
-            <AddTaskForm formNum={this.props.id} onAdd={this.props.onAdd} />
-          </li>
+        
         </ul>
       </div>
     );
   }
   
 }
+/*{<li className="add-list-wrapper">
+            <AddTaskForm formNum={this.props.id} onAdd={this.props.onAdd} />
+          </li> estaba denttro del return*/

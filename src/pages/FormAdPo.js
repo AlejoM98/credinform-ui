@@ -98,9 +98,12 @@ export default class FormAdPo extends Component {
             this.setState({
                 enviado : true
             });
+            window.location.href = 'http://localhost:3000/kanban';
             //muestro el mensaje
             return this.mensajeEnviado();
+            
         }
+         
     }
     mensajeEnviado(state) {
         //la variable enviado por defecto esta en 'false' pero cuando se 
@@ -125,87 +128,95 @@ export default class FormAdPo extends Component {
         });
     }
 
+
     render() {
         return (
-            <form className="form-group my-2" onSubmit={this.enviarForm.bind(this)}>
-                <div>
+            <form className="form-group my-2" onSubmit={this.enviarForm.bind(this)} >
+                <div className="row p-5">
                     <h1>Poliza</h1>
-                        <div className="form-group">
+                        <div className="form-group col">
                             <label>Poliza Nro.</label>
                             <input id = "NroPoliza" type="text" className="form-control" placeholder="CLP-123432648478230" 
-                                onchange={this.detectarCambio.bind(this, "NroPoliza")} value={this.state.campo["NroPoliza"] || ''} 
+                                onChange={this.detectarCambio.bind(this, "NroPoliza")} value={this.state.campo["NroPoliza"] || ''} 
                             />
                             <span style={{color:"red"}}>{this.state.error["NroPoliza"]}</span>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-sm-6">
                             <label>Afianzado</label>
                             <input id = "Afianzado" type="text" className="form-control" 
                                 onChange={this.detectarCambio.bind(this, "Afianzado")} value={this.state.campo["Afianzado"] || ''}/>
                             <span style={{color:"red"}}>{this.state.error["Afianzado"]}</span>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-sm-6">
                             <label>Direccion</label>
                             <input id= "Direccion" type="text" className="form-control" 
                                 onChange={this.detectarCambio.bind(this, "Direccion")} value={this.state.campo["Direccion"] || ''}
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-sm-6">
                             <label>Zona</label>
                             <input id = "Zona" type="text" className="form-control" 
                                 onChange={this.detectarCambio.bind(this, "Zona")} value={this.state.campo["Zona"] || ''}
                             />
                             <span style={{color:"red"}}>{this.state.error["Zona"]}</span>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-sm-2">
                             <label>Telefono</label>
                             <input id = "Telefono" type="text" className="form-control" 
                                 onChange={this.detectarCambio.bind(this, "Telefono")} value={this.state.campo["Telefono"] || ''}
                             />
                             <span style={{color:"red"}}>{this.state.error["Telefono"]}</span>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-sm-3">
                             <label>E-mail</label>
                             <input id = "email" type="email" className="form-control" 
                                 onChange={this.detectarCambio.bind(this, "email")} value={this.state.campo["email"] || ''}
                             />
                             <span style={{color:"red"}}>{this.state.error["email"]}</span>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-sm-2">
                             <label>Celular</label>
                             <input id="Celular" type="tel" className="form-control" placeholder="+591 XXXXXXXX" 
                                 onChange={this.detectarCambio.bind(this, "Celular")} value={this.state.campo["Celular"] || ''}
                             />
                             <span style={{color:"red"}}>{this.state.error["Celular"]}</span>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-md-5">
                             <label>NIT</label>
                             <input id = "NIT"type="text" className="form-control" 
                                 onChange={this.detectarCambio.bind(this, "NIT")} value={this.state.campo["NIT"] || ''}
                             />
                             <span style={{color:"red"}}>{this.state.error["NIT"]}</span>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-md-6">
                             <label>Actividad</label>
                             <input id = "Actividad" type="text" className="form-control" 
                                 onChange={this.detectarCambio.bind(this, "Actividad")} value={this.state.campo["Actividad"] || ''}
                             />
                             <span style={{color:"red"}}>{this.state.error["Actividad"]}</span>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-md-6">
                             <label>Distrito</label>
                             <input id = "Distrito" type="text" className="form-control" placeholder="La Paz" 
                                 onChange={this.detectarCambio.bind(this, "Distrito")} value={this.state.campo["Distrito"] || ''}
                             />
                             <span style={{color:"red"}}>{this.state.error["Distrito"]}</span>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-md-3">
+                            <label>Estado</label>
+                            <input id = "Estado" type="text" className="form-control" 
+                                onChange={this.detectarCambio.bind(this, "Estado")} value={this.state.campo["Estado"] || ''}
+                            />
+                            <span style={{color:"red"}}>{this.state.error["Estado"]}</span>
+                        </div>
+                        <div className="form-group col-md-3">
                             <label>Fecha inicio</label>
                             <input id="FecIni" type="date" className="form-control" 
                                 onChange={this.detectarCambio.bind(this, "FecIni")} value={this.state.campo["FecIni"] || ''}
                             />
                             <span style={{color:"red"}}>{this.state.error["FecIni"]}</span>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-md-3">
                             <label>Fecha Final</label>
                             <input id="FecFin" type="date" className="form-control" 
                                 onChange={this.detectarCambio.bind(this, "FecFin")} value={this.state.campo["FecFin"] || ''}
@@ -219,27 +230,17 @@ export default class FormAdPo extends Component {
                             />
                            <span style={{color:"red"}}>{this.state.error["Detalle"]}</span> 
                         </div>
-                        <div className="form-group">
-                            <label>Estado</label>
-                            <input id = "Estado" type="text" className="form-control" 
-                                onChange={this.detectarCambio.bind(this, "Estado")} value={this.state.campo["Estado"] || ''}
-                            />
-                            <span style={{color:"red"}}>{this.state.error["Estado"]}</span>
-                        </div>
+                        <div className="msgok" dangerouslySetInnerHTML={this.mensajeEnviado()} />
+                  
+                        <button type="submit" className="add-button btn btn-primary btn-block col-md-1">Adicionar</button>
+
+                        <button  type="submit" className="btn btn-primary btn-block col-md-1">Cancelar</button>
                     </div>
-
-                    <div className="msgok" dangerouslySetInnerHTML={this.mensajeEnviado()} />
-
-                    <Link to={`/kanban/${Kanban}`}>
-                        <button className="button add-button">Adicionar</button>
-                    </Link>
-                    <Link to={`/kanban/${Kanban}`}>
-                        <button className="button cancel-button">Cancelar</button>
-                    </Link>
-        
             </form>
         );
     }; 
 }
 
-/*onClick={() => this.setEditing(false)}  export default FormAdPo*/ 
+/*onClick={() => this.setEditing(false)}  export default FormAdPo 
+
+  <Link to={`/kanban/${Kanban}`}>*/ 

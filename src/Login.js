@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
  
 import Login from "./components/Login.js";
 import SignUp from "./components/SignUp.js";
-import Kanban from './components/Kanban.js';
+/*import Kanban from './components/Kanban.js';*/
 import FormAdPo from './pages/FormAdPo';
 import DashBoard from './pages/DashBoard';
 /*import Kanban2 from './components/Kanban2';*/
@@ -45,7 +45,6 @@ function Login1() {
           <Switch>
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
-            <Route path= "/kanban" component={Kanban}/>
             <Route path="/fromadpo" component = {FormAdPo}/>
             <Route path="/dashboard" pages = {DashBoard}/>
             <Route exact path='/' component={Login} />
@@ -61,4 +60,5 @@ export default Login1;
 /*<li className = "nav-item">
                 <Link className = "nav-link" to={"/kanban"}>Kanban</Link>
               </li>
+              <Route path= "/kanban" component={Kanban}/>
               */
