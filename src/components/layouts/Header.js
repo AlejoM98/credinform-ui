@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {Link} from 'react-router-dom';
 class Header extends Component {
     render() {
         return(
@@ -9,10 +9,8 @@ class Header extends Component {
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <p className="nav-link" to={"/sign-in"}>Login</p>
-                    </li>
-                    <li className="nav-item">
-                        <p className="nav-link" to={"/sign-up"}>Log Out</p>
+                    <Link className="nav-link" to="/sign-in" key = "LogOut">Log Out</Link>
+                       {/*  <a className="nav-link" href={'http://localhost:3000/SignIn'}>Log Out</a> */}
                     </li>
                     </ul>
                 </div>

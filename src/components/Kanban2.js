@@ -140,7 +140,7 @@ export default class Kanban2 extends Component {
   handleSubmit = (e)=> {
     //TODO conection 
     e.preventDefault();
-    window.location.href = 'http://localhost:3000/routes/Routes';
+    window.location.href = 'http://localhost:3000/dashboard';
   }
 
 

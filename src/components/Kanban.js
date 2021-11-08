@@ -3,6 +3,9 @@ import './Kanban.css';
 import List from './List';
 
 export default class Kanban extends Component {
+  //4. Leer toda la info de la local storage
+  //5. convertir a jso
+  //6.imprimir
   constructor(props) {
     super(props);
     //if there's a localStorage to be had grab it otherwise set state
@@ -151,7 +154,7 @@ render() {
         onAdd={(taskText, listNumber) => this.addTaskCard(taskText, listNumber)} 
         onDragStart={(e, fromList) => this.onDragStart(e, `${list.id}`)}
         onDragOver={(e) => this.onDragOver(e)} 
-        onDrop={(e, listNum) => {this.onDrop(e, `${list.id}`)}}
+        onDrop={(e, listNumber) => {this.onDrop(e, `${list.id}`)}}
       />
     </li>
   ));
