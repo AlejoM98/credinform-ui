@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import './FromAdPo.css';
-import Kanban from '../components/Kanban.js';
-import {Link} from "react-router-dom";
+/*import Kanban from '../components/Kanban.js';
+import {Link} from "react-router-dom";*/
 
 export default class FormAdPo extends Component {
     constructor (props){
         super(props);
         this.state = {
+            lists : {},
             campo : {}, // la entrada de los campos para la validacion 
             error : {}, 
             enviado : false 
@@ -98,12 +99,15 @@ export default class FormAdPo extends Component {
             this.setState({
                 enviado : true
             });
-            window.location.href = 'http://localhost:3000/kanban';
+           // window.location.href = 'http://localhost:3000/kanban';
             //muestro el mensaje
+            const polizaNueva = this.state.campo;
+            console.log('polizaNueva', polizaNueva);
+            localStorage.setItem('polizas',JSON.stringify(polizaNueva)) //convierte objeto a string
+            this.setState = { lists: polizaNueva }
+
             return this.mensajeEnviado();
-            
-        }
-         
+        } 
     }
     mensajeEnviado(state) {
         //la variable enviado por defecto esta en 'false' pero cuando se 
@@ -128,13 +132,23 @@ export default class FormAdPo extends Component {
         });
     }
 
+    onSubmit(event){
+        event.preventDefault();
+        const taskText = this.textInput.value.trim();
+        const listNumber = this.props.formNum;
+        console.log(listNumber)
+        if (taskText && this.props.onAdd) {
+            this.props.onAdd(taskText, listNumber);
+        }
+        this.textInput.value = '';
+    }
 
     render() {
         return (
             <form className="form-group my-2" onSubmit={this.enviarForm.bind(this)} >
                 <div className="row p-5">
                     <h1>Poliza</h1>
-                        <div className="form-group col">
+                        <div className="form-group col-md-6">
                             <label>Poliza Nro.</label>
                             <input id = "NroPoliza" type="text" className="form-control" placeholder="CLP-123432648478230" 
                                 onChange={this.detectarCambio.bind(this, "NroPoliza")} value={this.state.campo["NroPoliza"] || ''} 
@@ -234,12 +248,13 @@ export default class FormAdPo extends Component {
                   
                         <button type="submit" className="add-button btn btn-primary btn-block col-md-1">Adicionar</button>
 
-                        <button  type="submit" className="btn btn-primary btn-block col-md-1">Cancelar</button>
+                        <button className="btn btn-danger btn-block col-md-1" href="http://localhost:3000/kanban">Cancelar</button>
                     </div>
             </form>
         );
     }; 
 }
+//preguntar al Jhonny como hacer que no verifique cuando le de cancelar al formulario
 
 /*onClick={() => this.setEditing(false)}  export default FormAdPo 
 

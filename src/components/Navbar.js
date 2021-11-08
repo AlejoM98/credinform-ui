@@ -20,14 +20,15 @@ const useStyles = makeStyles(()=>({
     }
 }));
 
+
 function Navbar() {
     const classes= useStyles();
     return (
         <div className = {classes.root} >
-            <AppBar position="static">
+            <AppBar position="static"  >
                 <Toolbar>
-                    <IconButton edge="start" className= {classes.menuButton} color="inherit"> 
-                        <MenuIcon />
+                    <IconButton edge="start" className= {classes.menuButton} color="inherit" href="http://localhost:3000/kanban2"> 
+                        <MenuIcon/>
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
                        DashBoard
@@ -38,7 +39,6 @@ function Navbar() {
                     </IconButton>
                 </Toolbar>
             </AppBar>
-
         </div>
     );
 }
