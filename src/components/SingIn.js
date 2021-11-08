@@ -31,7 +31,7 @@ class SignIn extends Component {
   render() {
     return (
       <section className="section-conten padding-y">
-        <div className="card mx-5em" style={{ maxWidth: "100%" }}>
+        <div className="card-login">
           <div className="card-body">
             <h4 className="card-title mb-4">Sign in</h4>
             <form
